@@ -42,7 +42,7 @@ async function loadPosts() {
         // Svuota il container dai ghost elements
         postsContainer.innerHTML = '';
         
-        posts.forEach(post => {
+        posts.forEach((post, index) => {
             const title = post.querySelector('title').textContent;
             const link = post.querySelector('link').textContent;
             const pubDate = new Date(post.querySelector('pubDate').textContent);
@@ -51,10 +51,9 @@ async function loadPosts() {
             const content = post.querySelector('encoded').textContent;
             const image = extractImages(content)[0] || 'https://via.placeholder.com/150';
 
-
-            // Costruzione della card
+            // Costruzione della card con animazione
             const postCard = `
-                <div class="col-lg-4 mb-5 mb-lg-0" onclick="openPost('${link}')">
+                <div class="col-lg-4 mb-5 mb-lg-0 wow animate__animated animate__fadeIn" data-wow-delay="${index * 0.2}s" onclick="openPost('${link}')">
                     <div class="card h-100">
                         <img src="${image}" class="card-img-top" alt="Post Image">
                         <div class="card-body">
@@ -66,8 +65,11 @@ async function loadPosts() {
                 </div>
             `;
             
-            postsContainer.innerHTML += postCard; // Aggiungi la card al contenitore
+            postsContainer.innerHTML += postCard;
         });
+
+        // Reinizializza WOW.js dopo aver caricato i post
+        new WOW().init();
     } catch (error) {
         console.error('Errore nel caricamento dei post:', error);
     }
