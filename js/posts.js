@@ -54,12 +54,12 @@ async function loadPosts() {
 
             // Costruzione della card
             const postCard = `
-                <div class="col-md-4 mb-5 mb-md-0" onclick="openPost('${link}')">
+                <div class="col-lg-4 mb-5 mb-lg-0" onclick="openPost('${link}')">
                     <div class="card h-100">
                         <img src="${image}" class="card-img-top" alt="Post Image">
                         <div class="card-body">
                             <small class="d-block mb-2">${pubDate.toLocaleDateString()}</small>
-                            <span class="badge bg-light text-dark mb-2">${tags[0]}</span>
+                            <span class="badge bg-light text-dark mb-2 text-break text-wrap">${tags[0]}</span>
                             <b class="card-title">${title}</b>
                         </div>
                     </div>

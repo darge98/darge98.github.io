@@ -9,8 +9,8 @@
     --text-secondary: rgba(0, 0, 0, 0.7);
     --card-bg: #ffffff;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --skill-text: var(--text-primary); /* Testo scuro per light mode */
-    --skill-bg-opacity: 0.2;  /* Aumentata da 0.05 a 0.2 */
+    --skill-text: var(--text-primary);
+    --skill-bg-opacity: 0.2;
 }
 
 [data-theme="dark"] {
@@ -21,18 +21,13 @@
     --text-secondary: rgba(255, 255, 255, 0.7);
     --card-bg: #2d2d2d;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --skill-text: #ffffff; /* Testo chiaro per dark mode */
-    --skill-bg-opacity: 0.2;   /* Rimane 0.2 */
+    --skill-text: #ffffff;
+    --skill-bg-opacity: 0.2;
 }
 
 /* ==========================================================================
    Base Styles
    ========================================================================== */
-* {
-    /* Rimuoviamo questa regola */
-    /* transition: background-color 0.3s ease, color 0.3s ease; */
-}
-
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -40,12 +35,8 @@ body {
     font-size: 14px;
 }
 
-/* Aggiungiamo una nuova classe per gestire le transizioni */
-.theme-transition {
-    transition: all 0.3s ease;
-}
-
-/* Applichiamo la classe agli elementi che devono avere la transizione */
+/* Transizioni */
+.theme-transition,
 body,
 .sidebar,
 .card,
@@ -58,7 +49,7 @@ body,
 }
 
 /* ==========================================================================
-   Layout & Common Components
+   Layout Components
    ========================================================================== */
 /* Sidebar */
 .sidebar {
@@ -71,15 +62,12 @@ body,
     object-fit: cover;
 }
 
-.sidebar a {
-    text-decoration: none;
-    display: block;
-    margin: 5px 0;
-}
-
 .sidebar nav a {
     color: var(--text-secondary);
     font-size: 12px;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
 }
 
 .sidebar nav a.active {
@@ -129,27 +117,14 @@ body,
     justify-content: center;
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-    transition: all 0.3s ease;
 }
 
 .theme-toggle button:hover {
     transform: scale(1.1);
 }
 
-/* Card Base Style */
-.card-base {
-    border-radius: 8px;
-    overflow: hidden;
-    height: 100%;
-    transition: transform 0.3s ease;
-}
-
-.card-base:hover {
-    transform: translateY(-5px);
-}
-
 /* ==========================================================================
-   Sections
+   Section Styles
    ========================================================================== */
 /* About Section */
 .about-desc {
@@ -165,7 +140,6 @@ body,
     border: none;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -177,38 +151,13 @@ body,
     color: var(--skill-text);
 }
 
-.skills-section .card-text {
-    color: var(--skill-text);
-}
-
-.skills-section .card-title {
-    color: var(--skill-text);
-}
-
 /* Skill Cards Colors */
-.frontend-skill {
-    background-color: rgba(91, 192, 222, var(--skill-bg-opacity));
-}
-
-.backend-skill {
-    background-color: rgba(40, 167, 69, var(--skill-bg-opacity));
-}
-
-.devops-skill {
-    background-color: rgba(253, 126, 20, var(--skill-bg-opacity));
-}
-
-.software-architecture-skill {
-    background-color: rgba(241, 196, 15, var(--skill-bg-opacity));
-}
-
-.monitoring-skill {
-    background-color: rgba(220, 20, 60, var(--skill-bg-opacity));
-}
-
-.tbd-skill {
-    background-color: rgba(44, 62, 80, var(--skill-bg-opacity));
-}
+.frontend-skill { background-color: rgba(91, 192, 222, var(--skill-bg-opacity)); }
+.backend-skill { background-color: rgba(40, 167, 69, var(--skill-bg-opacity)); }
+.devops-skill { background-color: rgba(253, 126, 20, var(--skill-bg-opacity)); }
+.software-architecture-skill { background-color: rgba(241, 196, 15, var(--skill-bg-opacity)); }
+.monitoring-skill { background-color: rgba(220, 20, 60, var(--skill-bg-opacity)); }
+.tbd-skill { background-color: rgba(44, 62, 80, var(--skill-bg-opacity)); }
 
 /* Skill Icons Colors */
 .frontend-skill i { color: #5bc0de; }
@@ -233,12 +182,8 @@ body,
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
     transition: all 0.5s ease;
-}
-
-[data-theme="dark"] .project-card img {
-    background-color: #2d2d2d;
 }
 
 .project-overlay {
@@ -260,7 +205,6 @@ body,
     transition: all 0.3s ease;
     padding: 2rem;
     text-align: center;
-    padding: 4px;
 }
 
 .project-card:hover img {
@@ -285,7 +229,7 @@ body,
     margin-bottom: 1.5rem;
 }
 
-/* Nuovo stile per i badge delle tecnologie */
+/* Project Tech Badges */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -303,6 +247,7 @@ body,
     backdrop-filter: blur(5px);
 }
 
+/* Project Links */
 .project-links {
     display: flex;
     gap: 1rem;
@@ -393,7 +338,39 @@ body,
     color: var(--text-primary);
 }
 
-/* Ghost Cards migliorati */
+/* Social Icons */
+.home-section .fa-linkedin { color: #0077b5; }
+.home-section .fa-medium { color: #000000; }
+.home-section .fa-instagram { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home-section .fa-facebook { color: #1877f2; }
+.home-section .fa-github { color: #333; }
+
+[data-theme="dark"] .home-section .fa-github,
+[data-theme="dark"] .home-section .fa-medium { 
+    color: #fff; 
+}
+
+/* Particles */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ghost Cards Animation */
 .ghost-card {
     animation: pulse 1.5s infinite;
     border-radius: 12px;
@@ -413,13 +390,8 @@ body,
     border-radius: 4px;
 }
 
-.ghost-text.small {
-    width: 60%;
-}
-
-.ghost-text.large {
-    width: 100%;
-}
+.ghost-text.small { width: 60%; }
+.ghost-text.large { width: 100%; }
 
 @keyframes pulse {
     0% { opacity: 1; }
@@ -430,7 +402,6 @@ body,
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-/* Desktop (da md in poi) */
 @media (min-width: 768px) {
     .main-content {
         padding: 0 50px !important;
@@ -446,32 +417,90 @@ body,
     }
 }
 
-/* Modifica la sezione Projects per mobile */
 @media (max-width: 768px) {
     .project-card {
-        height: auto;  /* Altezza automatica basata sul contenuto */
-        min-height: 400px;  /* Altezza minima per garantire leggibilità */
+        height: auto;
+        min-height: 400px;
     }
 
     .project-overlay {
-        position: relative;  /* Non più absolute */
-        opacity: 1;         /* Sempre visibile */
+        position: relative;
+        opacity: 1;
         background: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.9),
             rgba(0, 0, 0, 0.95)
         );
-        height: auto;      /* Altezza basata sul contenuto */
+        height: auto;
         padding: 2rem 1rem;
     }
 
     .project-card img {
-        height: 200px;  /* Altezza fissa per l'immagine */
+        height: 200px;
     }
 
-    /* Rimuovi gli effetti hover su mobile */
     .project-card:hover img {
         transform: none;
         filter: none;
     }
+}
+
+@media (min-width: 992px) {
+    .project-card img {
+      object-fit: cover;
+    }
+  }
+
+/* CV Button */
+.btn-cv {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border: 2px solid var(--text-primary);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cv:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.btn-cv i {
+    font-size: 1.1em;
+}
+
+/* Aggiungi nelle media queries per mobile */
+@media (max-width: 768px) {
+    .btn-cv {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Modifica gli stili del bottone CV */
+.btn-cv-minimal {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.btn-cv-minimal:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.btn-cv-minimal i {
+    font-size: 1em;
+    opacity: 0.8;
 }
