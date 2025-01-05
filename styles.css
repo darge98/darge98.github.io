@@ -1,0 +1,477 @@
+/* ==========================================================================
+   Variables & Theme
+   ========================================================================== */
+:root {
+    /* Light theme (default) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #000000;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --skill-text: var(--text-primary); /* Testo scuro per light mode */
+    --skill-bg-opacity: 0.2;  /* Aumentata da 0.05 a 0.2 */
+}
+
+[data-theme="dark"] {
+    /* Dark theme */
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --card-bg: #2d2d2d;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --skill-text: #ffffff; /* Testo chiaro per dark mode */
+    --skill-bg-opacity: 0.2;   /* Rimane 0.2 */
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+* {
+    /* Rimuoviamo questa regola */
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Quicksand", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Aggiungiamo una nuova classe per gestire le transizioni */
+.theme-transition {
+    transition: all 0.3s ease;
+}
+
+/* Applichiamo la classe agli elementi che devono avere la transizione */
+body,
+.sidebar,
+.card,
+.theme-toggle button,
+.skills-section .card,
+.skills-section .card-body,
+.skills-section .card-text,
+.skills-section .card-title {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Layout & Common Components
+   ========================================================================== */
+/* Sidebar */
+.sidebar {
+    background-color: var(--bg-secondary);
+}
+
+.sidebar img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.sidebar a {
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.sidebar nav a {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.sidebar nav a.active {
+    color: #2c98f0;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.main-content h1, 
+.main-content h2, 
+.main-content h3 {
+    font-family: "Playfair Display", Georgia, serif !important;
+}
+
+.main-content p {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.1);
+}
+
+/* Card Base Style */
+.card-base {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card-base:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+/* About Section */
+.about-desc {
+    text-align: justify;
+}
+
+.about-desc p {
+    font-size: 0.85rem;
+}
+
+/* Skills Section */
+.skills-section .card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.skills-section .card-body {
+    color: var(--skill-text);
+}
+
+.skills-section .card-text {
+    color: var(--skill-text);
+}
+
+.skills-section .card-title {
+    color: var(--skill-text);
+}
+
+/* Skill Cards Colors */
+.frontend-skill {
+    background-color: rgba(91, 192, 222, var(--skill-bg-opacity));
+}
+
+.backend-skill {
+    background-color: rgba(40, 167, 69, var(--skill-bg-opacity));
+}
+
+.devops-skill {
+    background-color: rgba(253, 126, 20, var(--skill-bg-opacity));
+}
+
+.software-architecture-skill {
+    background-color: rgba(241, 196, 15, var(--skill-bg-opacity));
+}
+
+.monitoring-skill {
+    background-color: rgba(220, 20, 60, var(--skill-bg-opacity));
+}
+
+.tbd-skill {
+    background-color: rgba(44, 62, 80, var(--skill-bg-opacity));
+}
+
+/* Skill Icons Colors */
+.frontend-skill i { color: #5bc0de; }
+.backend-skill i { color: #28a745; }
+.devops-skill i { color: #fd7e14; }
+.software-architecture-skill i { color: #F1C40F; }
+.monitoring-skill i { color: #DC143C; }
+.tbd-skill i { color: #2c3e50; }
+
+/* Projects Section */
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    transition: all 0.5s ease;
+}
+
+[data-theme="dark"] .project-card img {
+    background-color: #2d2d2d;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.9)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 2rem;
+    text-align: center;
+    padding: 4px;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.project-overlay p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Nuovo stile per i badge delle tecnologie */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(5px);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+}
+
+.project-links a:hover {
+    color: #2c98f0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Posts Section */
+.posts-section {
+    padding: 2rem 0;
+}
+
+.posts-section .card {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.posts-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.posts-section .card img {
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px 12px 0 0;
+}
+
+.posts-section .card-body {
+    padding: 1.5rem;
+}
+
+.posts-section .card small {
+    color: var(--text-secondary) !important;
+    font-size: 0.85rem;
+}
+
+.posts-section .card .badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5em 1em;
+}
+
+.posts-section .card b {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.posts-section .btn-dark {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border: 2px solid var(--text-primary);
+}
+
+.posts-section .btn-dark:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+/* Ghost Cards migliorati */
+.ghost-card {
+    animation: pulse 1.5s infinite;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ghost-image {
+    height: 200px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px 12px 0 0;
+}
+
+.ghost-text {
+    height: 1rem;
+    background-color: var(--bg-secondary);
+    margin: 0.5rem 0;
+    border-radius: 4px;
+}
+
+.ghost-text.small {
+    width: 60%;
+}
+
+.ghost-text.large {
+    width: 100%;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/* Desktop (da md in poi) */
+@media (min-width: 768px) {
+    .main-content {
+        padding: 0 50px !important;
+    }
+
+    .home-section div {
+        min-width: 500px;
+    }
+
+    .posts-section .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Modifica la sezione Projects per mobile */
+@media (max-width: 768px) {
+    .project-card {
+        height: auto;  /* Altezza automatica basata sul contenuto */
+        min-height: 400px;  /* Altezza minima per garantire leggibilità */
+    }
+
+    .project-overlay {
+        position: relative;  /* Non più absolute */
+        opacity: 1;         /* Sempre visibile */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.95)
+        );
+        height: auto;      /* Altezza basata sul contenuto */
+        padding: 2rem 1rem;
+    }
+
+    .project-card img {
+        height: 200px;  /* Altezza fissa per l'immagine */
+    }
+
+    /* Rimuovi gli effetti hover su mobile */
+    .project-card:hover img {
+        transform: none;
+        filter: none;
+    }
+}
