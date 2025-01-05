@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <script src="js/scroll.js"></script>
-    <script src="js/posts.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" type="text/css" href="https://fonts.googleapis.com">
+    <link rel="preconnect" type="text/css" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="theme-toggle">
@@ -37,7 +31,6 @@
                     <a href="#home" class="active">HOME</a>
                     <a href="#about">ABOUT</a>
                     <a href="#skills">SKILLS</a>
-                    <a href="#experience">EXPERIENCE</a>
                     <a href="#projects">PROJECTS</a>
                     <a href="#posts">POSTS</a>
                 </nav>
@@ -71,7 +64,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <a href="assets/cv.pdf" class="btn-cv-minimal" download>
+                        <a href="cv/cv.pdf" target="_blank" class="btn-cv-minimal" download>
                             <i class="fa-solid fa-download me-2"></i>Download CV
                         </a>
                     </div>
@@ -81,8 +74,11 @@
                 <div class="about-section section" id="about">
                     <div class="row d-flex flex-column">
                         <div class="col-md-12">
-                            <div class="about-desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-                                <h3 class="text-start text-uppercase mb-3">Who am I?</h3>
+                            <div class="about-desc" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="d-flex flex-column-reverse flex-md-column mb-3">
+                                    <p class="text-muted text-start mb-0">Learn more about who I am, my background, and what drives me.</p>
+                                    <h3 class="text-start text-uppercase mb-0">Who am I?</h3>
+                                </div>
                                     <p>
                                         Hi! My name is <strong>Mattia D'Argenio</strong>, 
                                         I was born on <i>August 20th, 1998</i>, in the beautiful city of <i>Parma, Italy</i>. 
@@ -98,10 +94,10 @@
     
                                     <p>Outside of coding, I have a variety of interests that help me stay creative and inspired:</p>
                                     <ul class="px-4 pe-md-0">
-                                        <li>🎬 Exploring new movies and series—there's nothing like the immersive experience of a great film.</li>
-                                        <li>🌅 Traveling—whether it's a weekend getaway or an adventure across countries, I love exploring new places, cultures, and cuisines.</li>
-                                        <li>🚶🏻 Hiking in nature—being in the great outdoors helps me recharge. Whether it's a mountain trail or a peaceful forest, I find peace in nature.</li>
-                                        <li>👾 Playing single-player video games—there's something deeply immersive about single-player games that allow me to explore intricate stories and challenge myself without toxic community.</li>
+                                        <li class="mb-3">🎬 Exploring new <b>movies</b> and <b>series</b> — there's nothing like the immersive experience of a great film.</li>
+                                        <li class="mb-3">🌅 <b>Traveling</b> — whether it's a weekend getaway or an adventure across countries, I love exploring new places, cultures, and cuisines.</li>
+                                        <li class="mb-3">🚶🏻 Hiking in <b>nature</b> — being in the great outdoors helps me recharge. Whether it's a mountain trail or a peaceful forest, I find peace in nature.</li>
+                                        <li>👾 Playing <b>video games</b> — there's something deeply immersive about video-games that allow me to explore intricate stories and challenge myself.</li>
                                     </ul>
                             </div>
                         </div>
@@ -109,10 +105,11 @@
                 </div>
 
                 <!-- Skills -->
-                <div class="skills-section section" id="skills">
-                    <h3 class="text-start text-uppercase mb-3 wow animate__animated animate__fadeIn">What I Do?</h3>
+                <div class="skills-section section pt-2" id="skills">
+                    <p class="text-muted text-start mb-0" data-aos="fade-in">Here’s a breakdown of my core skills and areas of expertise.</p>
+                    <h3 class="text-start text-uppercase mb-3" data-aos="fade-in">What I Do?</h3>
                     <div class="row row-cols-1 row-cols-lg-3 g-4">
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="200">
                             <div class="card shadow rounded-3 h-100 frontend-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-brands fa-html5 fs-1"></i>
@@ -122,7 +119,7 @@
                             </div>
                         </div>
 
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="400">
                             <div class="card shadow rounded-3 h-100 backend-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-solid fa-server fs-1"></i>
@@ -132,7 +129,7 @@
                             </div>
                         </div>
 
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="600">
                             <div class="card shadow rounded-3 h-100 devops-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-solid fa-gears fs-1"></i>
@@ -142,7 +139,7 @@
                             </div>
                         </div>
 
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="800">
                             <div class="card shadow rounded-3 h-100 software-architecture-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-solid fa-diagram-project fs-1"></i>
@@ -152,7 +149,7 @@
                             </div>
                         </div>
 
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="1000">
                             <div class="card shadow rounded-3 h-100 monitoring-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-solid fa-chart-line fs-1"></i>
@@ -162,7 +159,7 @@
                             </div>
                         </div>
 
-                        <div class="col wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">
+                        <div class="col" data-aos="fade-up" data-aos-delay="1200">
                             <div class="card shadow rounded-3 h-100 tbd-skill">
                                 <div class="card-body text-center">
                                     <i class="fa-solid fa-ellipsis fs-1"></i>
@@ -175,51 +172,12 @@
                     </div>
                 </div>
 
-                <!-- Experience -->
-                <div class="experience-section section" id="experience">
-                    <h3 class="text-start text-uppercase mb-3 wow animate__animated animate__fadeIn">Experience & Certifications</h3>
-                    <div class="timeline">
-                        <!-- Credemtel -->
-                        <div class="timeline-item wow animate__animated animate__fadeInLeft">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2021 - Present</div>
-                                <div class="timeline-card">
-                                    <h4>Technical Lead</h4>
-                                    <h5>Credemtel S.p.A</h5>
-                                    <p>Leading development teams and architecting solutions for enterprise applications. Focusing on microservices architecture, cloud solutions, and DevOps practices.</p>
-                                    <div class="timeline-tags">
-                                        <span class="timeline-tag">Spring Boot</span>
-                                        <span class="timeline-tag">Angular</span>
-                                        <span class="timeline-tag">Azure</span>
-                                        <span class="timeline-tag">DevOps</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Azure Certification -->
-                        <div class="timeline-item wow animate__animated animate__fadeInRight">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2023</div>
-                                <div class="timeline-card certification">
-                                    <img src="images/certifications/azure-developer.png" alt="Azure Developer Associate" class="certification-badge">
-                                    <h4>Microsoft Certified: Azure Developer Associate</h4>
-                                    <p>Certification validating expertise in designing, building, testing, and maintaining cloud applications and services on Microsoft Azure.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Altri elementi della timeline... -->
-                    </div>
-                </div>
-
                 <!-- Projects -->
-                <div class="projects-section section" id="projects">
-                    <h3 class="text-start text-uppercase mb-3 wow animate__animated animate__fadeIn">My Projects</h3>
+                <div class="projects-section section pt-2" id="projects">
+                    <h3 class="text-start text-uppercase mb-3" data-aos="fade-in">My Projects</h3>
+                    <p class="text-muted text-start" data-aos="fade-in">Below are some of my favorite projects, showcasing my technical expertise and creativity.</p>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                        <div class="col wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                        <div class="col" data-aos="zoom-in" data-aos-delay="200">
                             <div class="project-card">
                                 <img src="images/projects/portfolio-light.png" alt="Portfolio Website" class="theme-aware-image" 
                                      data-light-src="images/projects/portfolio-dark.png"
@@ -243,13 +201,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Aggiungi altri progetti simili -->
+                        
                     </div>
                 </div>
 
                 <!-- Posts -->
-                <div class="posts-section section" id="posts">
-                    <h3 class="text-start text-uppercase mb-3 wow animate__animated animate__fadeIn">My latest posts</h3>
+                <div class="posts-section section pt-2" id="posts">
+                    <h3 class="text-start text-uppercase mb-3" data-aos="fade-in">My latest posts</h3>
+                    <p class="text-muted text-start" data-aos="fade-in">Discover my latest articles where I share insights on software development, technology, and best practices.</p>
                     <div class="row d-flex flex-column flex-lg-row justify-content-evenly align-items-stretch" id="posts-container">
                         
                     </div>
@@ -262,17 +221,16 @@
         </div>
     </div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="scripts/scroll.js"></script>
+    <script type="text/javascript" src="scripts/posts.js"></script>
+    <script type="text/javascript" src="scripts/theme.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="text/javascript" src="scripts/particles-config.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new WOW({
-                boxClass: 'wow',
-                animateClass: 'animate__animated',
-                offset: 150,
-                mobile: true,
-                live: true
-            }).init();
+        AOS.init({
+            once: true
         });
     </script>
 </body>

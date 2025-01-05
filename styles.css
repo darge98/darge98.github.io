@@ -635,9 +635,7 @@ body,
 
 /* Section Styles */
 .section {
-    /* Modifichiamo il padding verticale da 4 a 6rem (96px) */
-    padding: 6rem 0;
-    /* Aggiungiamo un po' di spazio anche ai lati su mobile */
+    padding: 4rem 0;
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -658,3 +656,71 @@ body,
         padding-top: 0;
     }
 }
+
+
+
+/* Impostazioni di base per la timeline */
+#timeline-embed {
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Personalizzare lo sfondo della timeline */
+  .timeline {
+    background-color: #f0f0f0; /* Cambia lo sfondo */
+    color: #333; /* Colore del testo */
+  }
+  
+  /* Personalizzare l'aspetto degli eventi */
+  .timeline-event {
+    border: 1px solid #ccc; /* Aggiungi bordi agli eventi */
+    background-color: #fff; /* Colore di sfondo per gli eventi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Aggiungi ombre per l'effetto 3D */
+    padding: 15px;
+    border-radius: 8px; /* Rende gli angoli arrotondati */
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-event:hover {
+    transform: scale(1.05); /* Zoom sugli eventi al passaggio del mouse */
+  }
+  
+  /* Modificare il layout del titolo dell'evento */
+  .timeline-event-headline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Personalizzare la descrizione dell'evento */
+  .timeline-event-text {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  /* Personalizzare le immagini */
+  .timeline-event-media img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Cambiare i colori del titolo principale */
+  .timeline-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Cambiare il colore delle date */
+  .timeline-event-date {
+    color: #2c3e50;
+    font-size: 16px;
+  }
+  
